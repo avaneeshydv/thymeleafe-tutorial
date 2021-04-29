@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 3px;
+            color: black;
+            background-color: azure;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables in thymleaf</title>
+</head>
+
+<body>
+    <h1>This is the Tutorial for Thymeleaf Variables</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Date of Birth</th>
+            <th>Weight</th>
+        </tr>
+        <tr>
+            <td th:text="${name}"></td>
+            <td th:text="${age}"></td>
+            <td><span th:text="${dateOfBirth}"></span></td>
+            <td th:text="${weight}"></td>
+        </tr>
+    </table>
+
+    <!-- To use various operations on variable of stirng, list etc like UpperCase, length etc -->
+    <h3><span th:text="${name}"></span> is <span th:text="${#strings.length(name)}"></span> character long.</h3>
+    <!-- Here the varible a,b and n is only ovailable to div -->
+   <div th:with = "a = 3 , b = 5, n = ${age}">
+       <p>Sum of <span th:text="${a}"></span> and  <span th:text="${b}"></span> is <span th:text="${a+b}"></span></p>
+   </div>
+</body>
+
+</html>

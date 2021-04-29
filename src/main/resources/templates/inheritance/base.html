@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="https://www.thymeleaf.org" 
+th:fragment = "layout(con)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheriting Thymeleaf Templare</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+    <h2>This is common header</h2>
+
+    <div th:replace = "${con}"></div>
+
+    <h3>This is common footer</h3>
+</body>
+
+</html>

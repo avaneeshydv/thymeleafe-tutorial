@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+</head>
+<body>
+    <footer th:fragment = "footer1(title, subtitle)">
+        <div>
+            <h1>About this page: <span th:text="${title}"></span></h1>
+            <h1>About this page: <span th:text="${subtitle}"></span></h1>
+            <h2>This is the copyright info</h2>
+            <h3>Contact info can be furbished here</h3>
+            <p>About your company privacy and other</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 3px;
+            color: black;
+            background-color: azure;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 3px;
+            color: black;
+            background-color: azure;
+        }
+
+        #even {
+            border: 1px solid black;
+            padding: 3px;
+            color: black;
+            background-color: chartreuse;
+        }
+
+        #odd {
+            border: 1px solid black;
+            padding: 3px;
+            color: black;
+            background-color: coral;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in thymleaf</title>
+</head>
+
+<body>
+
+    <h1>This is the Tutorial for Thymeleaf Looping</h1>
+    <table>
+        <!-- Header of the table -->
+        <div>
+            <tr>
+                <th style="background-color: darkgrey;">Index</th>
+                <th style="background-color: darkgrey;">Name</th>
+                <th style="background-color: darkgrey;">Age</th>
+                <th style="background-color: darkgrey;">Date of Birth</th>
+                <th style="background-color: darkgrey;">Weight</th>
+            </tr>
+        </div>
+        <!-- Below ex shows the looping of list and also how method is getting called on object -->
+        <!-- It also shows the weight of person which is stored in map-->
+        <div th:each="item , status : ${person}">
+            <tr>
+                <td th:style="${status.odd} ? 'background-color : chartreuse' : 'background-color: coral'"
+                    th:text="${status.index}+1">
+                </td>
+                <td th:style="${status.odd} ? 'background-color : chartreuse' : 'background-color: coral'"
+                    th:text="${item.getName()}">
+                </td>
+                <td th:style="${status.odd} ? 'background-color : chartreuse' : 'background-color: coral'"
+                    th:text="${item.getAge()}">
+                </td>
+                <td th:style="${status.odd} ? 'background-color : chartreuse' : 'background-color: coral'"
+                    th:text="${item.getDateOfBirth()}">
+                </td>
+                <td th:style="${status.odd} ? 'background-color : chartreuse' : 'background-color: coral'"
+                    th:text="${weight.get(item.getName())}">
+                </td>
+            </tr>
+        </div>
+    </table>
+
+</body>
+
+</html>

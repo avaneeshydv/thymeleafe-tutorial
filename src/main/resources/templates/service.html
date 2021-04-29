@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+</head>
+
+<body>
+
+    <h1>This is content of the page</h1>
+    <!--We can use replace or Include in in place of insert-->
+    <div id="hosttage" th:replace= "myfooter::footer1(${title}, ${subtitle})"></div>
+    
+</body>
+
+</html>
